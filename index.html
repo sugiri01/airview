@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontal Designs - Architecture Proposal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <div class="w-64 bg-gradient-to-b from-gray-800 to-gray-900 text-white flex flex-col fixed h-full">
+            <!-- Logo section with white background -->
+            <div class="bg-white p-4 border-b border-gray-200">
+                <img src="2.png" alt="Frontal Designs Logo" class="h-8">
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="flex-1 overflow-y-auto py-4">
+                <ul class="space-y-2 px-3">
+                    <li>
+                        <a href="#home" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                            <i data-feather="home" class="h-5 w-5 mr-3"></i>
+                            Cover Page
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#placeholder1" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                            <i data-feather="box" class="h-5 w-5 mr-3"></i>
+                            System Architecture
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#placeholder2" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                            <i data-feather="cpu" class="h-5 w-5 mr-3"></i>
+                            Data Architecture
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#architecture" class="flex items-center px-4 py-3 bg-gray-700 text-white rounded-lg">
+                            <i data-feather="layers" class="h-5 w-5 mr-3"></i>
+                            ML Framework
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#placeholder3" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                            <i data-feather="database" class="h-5 w-5 mr-3"></i>
+                            AI Platform
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#placeholder4" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                            <i data-feather="bar-chart-2" class="h-5 w-5 mr-3"></i>
+                            Implementation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#placeholder5" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                            <i data-feather="clock" class="h-5 w-5 mr-3"></i>
+                            Timeline & Budget
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#hospitals" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                            <i data-feather="heart" class="h-5 w-5 mr-3"></i>
+                            Use Case 1 : Hospitals & Healthcare
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#hotels" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                            <i data-feather="home" class="h-5 w-5 mr-3"></i>
+                            Use Case 2 : Luxury Hotels & Resorts
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#itparks" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                            <i data-feather="cpu" class="h-5 w-5 mr-3"></i>
+                            Use Case 3: IT Parks & Tech Campuses
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#public" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                            <i data-feather="users" class="h-5 w-5 mr-3"></i>
+                            Use Case 4: Public Spaces
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#lstm" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                            <i data-feather="trending-up" class="h-5 w-5 mr-3"></i>
+                            Sample LSTM Implementation
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 ml-64">
+            <!-- Header -->
+            <header class="h-16 bg-white shadow-sm fixed w-full ml-64 z-10">
+                <div class="flex items-center justify-between h-full px-6">
+                    <h1 class="text-xl font-semibold text-gray-800">Airvue Systems - Platform Proposal</h1>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-sm text-gray-600">Frontal Designs</span>
+                        <div class="h-8 w-8 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full flex items-center justify-center text-white">
+                            FD
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="pt-16 min-h-screen">
+                <!-- Cover Page -->
+                <section id="home" class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+                    <div class="max-w-4xl mx-auto pt-20">
+                        <div class="bg-white rounded-2xl shadow-xl p-12 text-center">
+                            <!-- Logos Container with fixed width and height -->
+                            <div class="flex justify-center items-center space-x-12 mb-12">
+                                <!-- Frontal Designs Logo - Fixed size -->
+                                <div class="w-40 h-16 flex items-center justify-center">
+                                    <img src="2.png" alt="Frontal Designs Logo" class="max-h-full max-w-full object-contain">
+                                </div>
+                                <!-- Decorative Divider -->
+                                <div class="h-16 w-px bg-gray-200"></div>
+                                <!-- MedCuore Logo - Fixed size -->
+                                <div class="w-40 h-16 flex items-center justify-center">
+                                    <img src="22.webp" alt="MedCuore Logo" class="max-h-full max-w-full object-contain">
+                                </div>
+                            </div>
+
+                            <h1 class="text-4xl font-bold text-gray-900 mb-6">Platform Development Proposal</h1>
+                            <h2 class="text-2xl text-gray-600 mb-12">AI & ML Solutions Partnership</h2>
+                            
+                            <div class="max-w-2xl mx-auto">
+                                <p class="text-gray-600 leading-relaxed mb-8">
+                                    Thank you for considering Frontal Designs for your data analytics, machine learning, and AI platform 
+                                    development needs. We are excited to present our comprehensive proposal that aligns with your vision 
+                                    for innovation and excellence in air quality monitoring and analytics.
+                                </p>
+                                
+                                <!-- Presentation Details -->
+                                <div class="border-t border-gray-200 pt-8 mt-8">
+                                    <div class="flex justify-between items-start">
+                                        <!-- Left side - Frontal Designs -->
+                                        <div class="text-left">
+                                            <p class="text-sm text-gray-500">Presented by</p>
+                                            <h3 class="text-xl font-semibold text-gray-800 mt-2">Frontal Designs</h3>
+                                            <p class="text-gray-600 mt-1">Technical Solutions Team</p>
+                                        </div>
+                                        <!-- Right side - MedCuore -->
+                                        <div class="text-right">
+                                            <p class="text-sm text-gray-500">Prepared for</p>
+                                            <h3 class="text-xl font-semibold text-gray-800 mt-2">MedCuore</h3>
+                                            <p class="text-gray-600 mt-1">Airvue, AQM Systems</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                                              
+                <!-- Additional placeholder sections would go here -->
+                <section id="placeholder1" class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8 hidden">
+                    <div class="max-w-7xl mx-auto pt-8">
+                        <div class="bg-white rounded-2xl shadow-xl p-8">
+                            <div class="flex items-center gap-3 mb-8">
+                                <i data-feather="layout" class="text-blue-600 w-8 h-8"></i>
+                                <h2 class="text-3xl font-bold text-gray-900">Current System Architecture</h2>
+                            </div>
+                
+                            <!-- Architecture Diagram -->
+                            <div class="mb-12">
+                                <div class="bg-blue-50 rounded-lg p-6 overflow-auto">
+                                    <img src="1.svg" alt="Current System Architecture Diagram" class="w-full max-w-4xl mx-auto">
+                                </div>
+                            </div>
+                
+                            <!-- Architecture Layers Description -->
+                            <div class="space-y-8">
+                                <!-- Data Layer -->
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <i data-feather="database" class="text-purple-600"></i>
+                                        <h2 class="text-2xl font-bold text-purple-600">Data Layer</h2>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="pl-6 border-l-2 border-purple-200">
+                                            <h3 class="font-semibold text-lg mb-2">Core Components</h3>
+                                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                                <li><span class="font-medium">IoT Air Quality Sensors:</span> Monitor and capture real-time environmental data</li>
+                                                <li><span class="font-medium">Edge Gateway:</span> Initial validation and filtering</li>
+                                                <li><span class="font-medium">Raw Data Repository:</span> Central storage for unprocessed data</li>
+                                                <li><span class="font-medium">ETL Pipeline:</span> Data transformation and structuring</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Processing Layer -->
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <i data-feather="cpu" class="text-blue-600"></i>
+                                        <h2 class="text-2xl font-bold text-blue-600">Processing Layer</h2>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="pl-6 border-l-2 border-blue-200">
+                                            <h3 class="font-semibold text-lg mb-2">Processing Components</h3>
+                                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                                <li><span class="font-medium">Apache Kafka:</span> Real-time data ingestion and streaming</li>
+                                                <li><span class="font-medium">Apache Spark:</span> Large-scale data processing</li>
+                                                <li><span class="font-medium">Airflow DAGs:</span> Workflow orchestration</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Service Layer -->
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <i data-feather="server" class="text-green-600"></i>
+                                        <h2 class="text-2xl font-bold text-green-600">Service Layer</h2>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="pl-6 border-l-2 border-green-200">
+                                            <h3 class="font-semibold text-lg mb-2">Service Components</h3>
+                                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                                <li><span class="font-medium">API Gateway:</span> REST/GraphQL interface for external access</li>
+                                                <li><span class="font-medium">Redis Cache:</span> Performance optimization</li>
+                                                <li><span class="font-medium">Authentication Service:</span> Security management</li>
+                                                <li><span class="font-medium">Notifications:</span> Alert and update system</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Application Layer -->
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <i data-feather="layout" class="text-red-600"></i>
+                                        <h2 class="text-2xl font-bold text-red-600">Application Layer</h2>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="pl-6 border-l-2 border-red-200">
+                                            <h3 class="font-semibold text-lg mb-2">User Interfaces</h3>
+                                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                                <li><span class="font-medium">Web Dashboard:</span> Browser-based monitoring interface</li>
+                                                <li><span class="font-medium">Mobile App:</span> Portable access solution</li>
+                                                <li><span class="font-medium">Alert System:</span> Multi-channel notification system</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Summary -->
+                            <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">System Overview</h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    The current architecture provides a robust foundation for air quality monitoring and data processing. 
+                                    It effectively handles data collection from IoT sensors, processes it through various layers, and makes 
+                                    it accessible through both web and mobile interfaces. This system forms the basis for our proposed 
+                                    enhancements and new ML capabilities.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="architecture" class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8 hidden">
+                    <div class="max-w-7xl mx-auto pt-8">
+                        <div class="bg-white rounded-2xl shadow-xl p-8">
+                            <div class="flex items-center gap-3 mb-8">
+                                <i data-feather="cpu" class="text-blue-600 w-8 h-8"></i>
+                                <h2 class="text-3xl font-bold text-gray-900">Proposed ML Architecture</h2>
+                            </div>
+                
+                            <!-- Architecture Overview -->
+                            <div class="bg-white rounded-xl p-6 mb-8">
+                                <p class="text-gray-600 leading-relaxed">
+                                    The proposed ML architecture enhances the current system with advanced machine learning capabilities, 
+                                    introducing new components for model training, deployment, and monitoring while seamlessly integrating 
+                                    with existing infrastructure.
+                                </p>
+                            </div>
+                
+                            <!-- Architecture Diagram -->
+                            <div class="mb-12">
+                                <div class="bg-blue-50 rounded-lg p-6 overflow-auto">
+                                    <img src="3.svg" alt="Proposed ML Architecture Diagram" class="w-full max-w-4xl mx-auto">
+                                </div>
+                            </div>
+                
+                            <!-- Architecture Layers Description -->
+                            <div class="space-y-8">
+                                <!-- Data Layer -->
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <i data-feather="database" class="text-purple-600"></i>
+                                        <h2 class="text-2xl font-bold text-purple-600">Data Layer (Enhanced)</h2>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="pl-6 border-l-2 border-purple-200">
+                                            <h3 class="font-semibold text-lg mb-2">Enhanced Components</h3>
+                                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                                <li><span class="font-medium">Raw Data Lake:</span> Expanded storage for training data</li>
+                                                <li><span class="font-medium">ETL Pipeline:</span> Enhanced data transformation for ML</li>
+                                                <li><span class="font-medium">Feature Store:</span> Centralized feature management</li>
+                                                <li><span class="font-medium">Data Warehouse:</span> Structured storage for ML-ready data</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- ML Layer -->
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <i data-feather="git-branch" class="text-blue-600"></i>
+                                        <h2 class="text-2xl font-bold text-blue-600">ML Layer (New)</h2>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="pl-6 border-l-2 border-blue-200">
+                                            <h3 class="font-semibold text-lg mb-2">ML Components</h3>
+                                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                                <li><span class="font-medium">Training Pipeline:</span> Automated model training workflows</li>
+                                                <li><span class="font-medium">MLflow Registry:</span> Version control for ML models</li>
+                                                <li><span class="font-medium">Deployed Models:</span> Production-ready ML models</li>
+                                                <li><span class="font-medium">Inference Pipeline:</span> Real-time prediction service</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Model Monitoring -->
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <i data-feather="activity" class="text-green-600"></i>
+                                        <h2 class="text-2xl font-bold text-green-600">Model Monitoring (New)</h2>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="pl-6 border-l-2 border-green-200">
+                                            <h3 class="font-semibold text-lg mb-2">Monitoring Components</h3>
+                                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                                <li><span class="font-medium">Performance Metrics:</span> Real-time model performance tracking</li>
+                                                <li><span class="font-medium">Model Drift Detection:</span> Automated accuracy monitoring</li>
+                                                <li><span class="font-medium">Alert System:</span> Performance degradation notifications</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Integration Points -->
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <i data-feather="git-merge" class="text-red-600"></i>
+                                        <h2 class="text-2xl font-bold text-red-600">Integration Points</h2>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="pl-6 border-l-2 border-red-200">
+                                            <h3 class="font-semibold text-lg mb-2">System Integration</h3>
+                                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                                <li><span class="font-medium">API Gateway Integration:</span> ML predictions via REST/GraphQL</li>
+                                                <li><span class="font-medium">Data Pipeline Connection:</span> Seamless data flow for training</li>
+                                                <li><span class="font-medium">Alert System Integration:</span> ML-driven notifications</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Summary -->
+                            <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">Enhanced Capabilities</h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    The proposed ML architecture introduces robust machine learning capabilities while maintaining seamless 
+                                    integration with existing components. This enhancement enables predictive analytics, automated model 
+                                    training, and continuous monitoring, significantly expanding the system's analytical capabilities. The 
+                                    architecture ensures scalability, maintainability, and reliability of ML operations within the Airvue platform.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="placeholder2" class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8 hidden">
+                    <div class="max-w-7xl mx-auto pt-8">
+                        <div class="bg-white rounded-2xl shadow-xl p-8">
+                            <div class="flex items-center gap-3 mb-8">
+                                <i data-feather="database" class="text-blue-600 w-8 h-8"></i>
+                                <h2 class="text-3xl font-bold text-gray-900">Data Architecture & Enhancement</h2>
+                            </div>
+                
+                            <!-- Architecture Overview -->
+                            <div class="bg-white rounded-xl p-6 mb-8">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Based on the analysis of current sensor data streams, we propose an enhanced data architecture that addresses data quality, 
+                                    completeness, and analytical capabilities. This architecture ensures robust data collection, validation, and processing for 
+                                    accurate air quality monitoring and analysis.
+                                </p>
+                            </div>
+                
+                            <!-- Architecture Components -->
+                            <div class="space-y-8">
+                                <!-- Data Collection & Enhancement -->
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <i data-feather="layers" class="text-purple-600"></i>
+                                        <h2 class="text-2xl font-bold text-purple-600">Data Collection Enhancement</h2>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="pl-6 border-l-2 border-purple-200">
+                                            <h3 class="font-semibold text-lg mb-2">Additional Data Points</h3>
+                                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                                <li><span class="font-medium">Geographic Data:</span> Latitude, longitude, elevation for spatial analysis</li>
+                                                <li><span class="font-medium">Environmental Context:</span> Indoor/outdoor placement, room type, ventilation</li>
+                                                <li><span class="font-medium">Device Metadata:</span> Calibration date, firmware version, sensor age</li>
+                                                <li><span class="font-medium">External Data:</span> Weather conditions, traffic data, nearby construction</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Data Quality Framework -->
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <i data-feather="check-circle" class="text-green-600"></i>
+                                        <h2 class="text-2xl font-bold text-green-600">Data Quality Framework</h2>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="pl-6 border-l-2 border-green-200">
+                                            <h3 class="font-semibold text-lg mb-2">Quality Measures</h3>
+                                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                                <li><span class="font-medium">Validation Rules:</span> Range checks, correlation validation, trend analysis</li>
+                                                <li><span class="font-medium">Missing Data Handling:</span> Interpolation strategies, flagging mechanisms</li>
+                                                <li><span class="font-medium">Anomaly Detection:</span> Statistical methods, machine learning models</li>
+                                                <li><span class="font-medium">Data Freshness:</span> Timestamp validation, latency monitoring</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Data Storage & Processing -->
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <i data-feather="hard-drive" class="text-blue-600"></i>
+                                        <h2 class="text-2xl font-bold text-blue-600">Storage Architecture</h2>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="pl-6 border-l-2 border-blue-200">
+                                            <h3 class="font-semibold text-lg mb-2">Storage Layers</h3>
+                                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                                <li><span class="font-medium">Raw Data Layer:</span> Immutable storage of original sensor readings</li>
+                                                <li><span class="font-medium">Processed Layer:</span> Cleaned and validated data</li>
+                                                <li><span class="font-medium">Aggregated Layer:</span> Time-based aggregations and summaries</li>
+                                                <li><span class="font-medium">Analysis Layer:</span> Derived metrics and insights</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Data Access & API -->
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <i data-feather="code" class="text-red-600"></i>
+                                        <h2 class="text-2xl font-bold text-red-600">Data Access Patterns</h2>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="pl-6 border-l-2 border-red-200">
+                                            <h3 class="font-semibold text-lg mb-2">Access Methods</h3>
+                                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                                <li><span class="font-medium">Real-time API:</span> Current readings and status</li>
+                                                <li><span class="font-medium">Historical API:</span> Time-series data access</li>
+                                                <li><span class="font-medium">Analytics API:</span> Aggregated metrics and insights</li>
+                                                <li><span class="font-medium">Streaming Interface:</span> Real-time data subscription</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Implementation Considerations -->
+                            <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">Implementation Guidelines</h3>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <h4 class="font-medium text-gray-800">Data Collection</h4>
+                                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                            <li>Implement robust error handling</li>
+                                            <li>Ensure consistent sampling rates</li>
+                                            <li>Validate sensor calibration</li>
+                                            <li>Monitor battery levels</li>
+                                        </ul>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <h4 class="font-medium text-gray-800">Data Processing</h4>
+                                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                            <li>Implement data versioning</li>
+                                            <li>Maintain audit trails</li>
+                                            <li>Monitor processing latency</li>
+                                            <li>Regular quality checks</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="placeholder3" class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8 hidden">
+                    <div class="max-w-7xl mx-auto pt-8">
+                        <div class="bg-white rounded-2xl shadow-xl p-8">
+                            <div class="flex items-center gap-3 mb-8">
+                                <i data-feather="cpu" class="text-blue-600 w-8 h-8"></i>
+                                <h2 class="text-3xl font-bold text-gray-900">AI Architecture Overview</h2>
+                            </div>
+                
+                            <!-- Architecture Overview -->
+                            <div class="bg-white rounded-xl p-6 mb-8">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Our proposed AI architecture integrates multiple data sources with specialized pre-trained models to deliver comprehensive 
+                                    environmental analysis and predictions through three main AI processing streams.
+                                </p>
+                            </div>
+                
+                            <!-- Architecture Diagram -->
+                            <div class="mb-12">
+                                <div class="bg-blue-50 rounded-lg p-6 overflow-auto">
+                                    <img src="6.svg" alt="AI Architecture Diagram" class="w-full max-w-4xl mx-auto">
+                                </div>
+                            </div>
+                
+                            <!-- Input Data Sources -->
+                            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-lg p-8 mb-8">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <i data-feather="database" class="text-blue-600 w-8 h-8"></i>
+                                    <h2 class="text-2xl font-bold text-gray-900">Input Data Sources</h2>
+                                </div>
+                                <div class="grid md:grid-cols-4 gap-6">
+                                    <div class="bg-white rounded-lg p-6 shadow">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="activity" class="text-blue-500 w-5 h-5"></i>
+                                            <h3 class="font-semibold text-lg">Sensor Data</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm">Real-time air quality measurements and environmental parameters</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-6 shadow">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="camera" class="text-blue-500 w-5 h-5"></i>
+                                            <h3 class="font-semibold text-lg">Satellite & Camera</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm">Visual data from satellites and ground-based cameras</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-6 shadow">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="file-text" class="text-blue-500 w-5 h-5"></i>
+                                            <h3 class="font-semibold text-lg">Environmental Reports</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm">Official environmental assessment reports and documentation</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-6 shadow">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="cloud" class="text-blue-500 w-5 h-5"></i>
+                                            <h3 class="font-semibold text-lg">Weather Data</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm">Meteorological data and weather forecasts</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Pre-trained Models -->
+                            <div class="bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl shadow-lg p-8 mb-8">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <i data-feather="box" class="text-purple-600 w-8 h-8"></i>
+                                    <h2 class="text-2xl font-bold text-gray-900">Pre-trained Models</h2>
+                                </div>
+                                <div class="grid md:grid-cols-3 gap-6">
+                                    <div class="bg-white rounded-lg p-6 shadow">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="trending-up" class="text-purple-500 w-5 h-5"></i>
+                                            <h3 class="font-semibold text-lg">Time Series Models</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm">Pre-trained models for temporal pattern analysis</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-6 shadow">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="eye" class="text-purple-500 w-5 h-5"></i>
+                                            <h3 class="font-semibold text-lg">Vision Models</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm">Computer vision models for image analysis</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-6 shadow">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="message-square" class="text-purple-500 w-5 h-5"></i>
+                                            <h3 class="font-semibold text-lg">Language Models</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm">NLP models for text analysis and generation</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- AI Models -->
+                            <div class="space-y-8">
+                                <div class="grid md:grid-cols-3 gap-8">
+                                    <!-- Natural Language -->
+                                    <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-xl shadow-lg p-6">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="message-circle" class="text-green-600 w-6 h-6"></i>
+                                            <h3 class="text-xl font-semibold">Natural Language</h3>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <p class="font-medium text-gray-800">Environmental Sentiment</p>
+                                                <p class="text-sm text-gray-600">Analysis of environmental impact reports</p>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <p class="font-medium text-gray-800">Report Analysis</p>
+                                                <p class="text-sm text-gray-600">Extracting insights from documentation</p>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <p class="font-medium text-gray-800">Alert Generation</p>
+                                                <p class="text-sm text-gray-600">Automated alert message creation</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <!-- Computer Vision -->
+                                    <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-lg p-6">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="eye" class="text-blue-600 w-6 h-6"></i>
+                                            <h3 class="text-xl font-semibold">Computer Vision</h3>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <p class="font-medium text-gray-800">AQI Prediction</p>
+                                                <p class="text-sm text-gray-600">Visual-based air quality assessment</p>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <p class="font-medium text-gray-800">Smog Detection</p>
+                                                <p class="text-sm text-gray-600">Identification of air pollution patterns</p>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <p class="font-medium text-gray-800">Particle Analysis</p>
+                                                <p class="text-sm text-gray-600">Visual particle concentration analysis</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <!-- Time Series Analysis -->
+                                    <div class="bg-gradient-to-r from-red-50 to-red-100 rounded-xl shadow-lg p-6">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="trending-up" class="text-red-600 w-6 h-6"></i>
+                                            <h3 class="text-xl font-semibold">Time Series Analysis</h3>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <p class="font-medium text-gray-800">LSTM + Time2Vec</p>
+                                                <p class="text-sm text-gray-600">Advanced temporal pattern recognition</p>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <p class="font-medium text-gray-800">Transformer + TFT</p>
+                                                <p class="text-sm text-gray-600">Temporal forecasting models</p>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <p class="font-medium text-gray-800">Anomaly Detection</p>
+                                                <p class="text-sm text-gray-600">Identifying unusual patterns</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="placeholder4" class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8 hidden">
+                    <div class="max-w-7xl mx-auto pt-8">
+                        <div class="bg-white rounded-2xl shadow-xl p-8">
+                            <!-- Header -->
+                            <div class="flex items-center gap-3 mb-8">
+                                <i data-feather="git-merge" class="text-indigo-600 w-8 h-8"></i>
+                                <h2 class="text-3xl font-bold text-gray-900">Implementation Roadmap</h2>
+                            </div>
+                
+                            <!-- Overview -->
+                            <div class="bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-xl p-6 mb-12">
+                                <p class="text-gray-700 leading-relaxed">
+                                    The transition from the current architecture to the AI-enabled system requires systematic implementation across multiple phases. 
+                                    Each phase is designed to minimize disruption while maximizing the integration of new capabilities.
+                                </p>
+                            </div>
+                
+                            <!-- Implementation Timeline -->
+                            <div class="relative">
+                                <!-- Phase 1: Infrastructure Enhancement -->
+                                <div class="mb-12">
+                                    <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-lg p-6">
+                                        <div class="flex items-center gap-3 mb-6">
+                                            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">1</div>
+                                            <h3 class="text-2xl font-bold text-gray-900">Infrastructure Enhancement</h3>
+                                        </div>
+                                        <div class="grid md:grid-cols-3 gap-6">
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <div class="flex items-center gap-2 mb-3">
+                                                    <i data-feather="database" class="text-blue-500 w-5 h-5"></i>
+                                                    <h4 class="font-semibold">Data Lake Setup</h4>
+                                                </div>
+                                                <ul class="text-sm text-gray-600 space-y-2">
+                                                    <li>• Upgrade Raw Data Repository to Data Lake</li>
+                                                    <li>• Implement data versioning</li>
+                                                    <li>• Set up data cataloging</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <div class="flex items-center gap-2 mb-3">
+                                                    <i data-feather="server" class="text-blue-500 w-5 h-5"></i>
+                                                    <h4 class="font-semibold">Processing Infrastructure</h4>
+                                                </div>
+                                                <ul class="text-sm text-gray-600 space-y-2">
+                                                    <li>• Scale Kafka & Spark clusters</li>
+                                                    <li>• Implement stream processing</li>
+                                                    <li>• Optimize data pipelines</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <div class="flex items-center gap-2 mb-3">
+                                                    <i data-feather="hard-drive" class="text-blue-500 w-5 h-5"></i>
+                                                    <h4 class="font-semibold">Storage Optimization</h4>
+                                                </div>
+                                                <ul class="text-sm text-gray-600 space-y-2">
+                                                    <li>• Implement data partitioning</li>
+                                                    <li>• Set up data lifecycle policies</li>
+                                                    <li>• Configure backup systems</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Phase 2: Data Integration -->
+                                <div class="mb-12">
+                                    <div class="bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl shadow-lg p-6">
+                                        <div class="flex items-center gap-3 mb-6">
+                                            <div class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">2</div>
+                                            <h3 class="text-2xl font-bold text-gray-900">Data Integration</h3>
+                                        </div>
+                                        <div class="grid md:grid-cols-3 gap-6">
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <div class="flex items-center gap-2 mb-3">
+                                                    <i data-feather="box" class="text-purple-500 w-5 h-5"></i>
+                                                    <h4 class="font-semibold">External Data Sources</h4>
+                                                </div>
+                                                <ul class="text-sm text-gray-600 space-y-2">
+                                                    <li>• Connect satellite data feeds</li>
+                                                    <li>• Integrate weather APIs</li>
+                                                    <li>• Set up environmental reports ingestion</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <div class="flex items-center gap-2 mb-3">
+                                                    <i data-feather="filter" class="text-purple-500 w-5 h-5"></i>
+                                                    <h4 class="font-semibold">Data Preprocessing</h4>
+                                                </div>
+                                                <ul class="text-sm text-gray-600 space-y-2">
+                                                    <li>• Implement data cleaning pipelines</li>
+                                                    <li>• Set up feature extraction</li>
+                                                    <li>• Configure data validation rules</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <div class="flex items-center gap-2 mb-3">
+                                                    <i data-feather="package" class="text-purple-500 w-5 h-5"></i>
+                                                    <h4 class="font-semibold">Feature Store</h4>
+                                                </div>
+                                                <ul class="text-sm text-gray-600 space-y-2">
+                                                    <li>• Set up feature registry</li>
+                                                    <li>• Implement feature versioning</li>
+                                                    <li>• Configure feature serving</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Phase 3: ML Infrastructure -->
+                                <div class="mb-12">
+                                    <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-xl shadow-lg p-6">
+                                        <div class="flex items-center gap-3 mb-6">
+                                            <div class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">3</div>
+                                            <h3 class="text-2xl font-bold text-gray-900">ML Infrastructure</h3>
+                                        </div>
+                                        <div class="grid md:grid-cols-3 gap-6">
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <div class="flex items-center gap-2 mb-3">
+                                                    <i data-feather="cpu" class="text-green-500 w-5 h-5"></i>
+                                                    <h4 class="font-semibold">Model Training</h4>
+                                                </div>
+                                                <ul class="text-sm text-gray-600 space-y-2">
+                                                    <li>• Set up ML training clusters</li>
+                                                    <li>• Configure GPU resources</li>
+                                                    <li>• Implement training pipelines</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <div class="flex items-center gap-2 mb-3">
+                                                    <i data-feather="git-branch" class="text-green-500 w-5 h-5"></i>
+                                                    <h4 class="font-semibold">Model Registry</h4>
+                                                </div>
+                                                <ul class="text-sm text-gray-600 space-y-2">
+                                                    <li>• Set up MLflow registry</li>
+                                                    <li>• Configure model versioning</li>
+                                                    <li>• Implement model metadata tracking</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <div class="flex items-center gap-2 mb-3">
+                                                    <i data-feather="activity" class="text-green-500 w-5 h-5"></i>
+                                                    <h4 class="font-semibold">Model Monitoring</h4>
+                                                </div>
+                                                <ul class="text-sm text-gray-600 space-y-2">
+                                                    <li>• Set up performance monitoring</li>
+                                                    <li>• Implement drift detection</li>
+                                                    <li>• Configure alerting systems</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Phase 4: Deployment & Integration -->
+                                <div class="mb-12">
+                                    <div class="bg-gradient-to-r from-red-50 to-red-100 rounded-xl shadow-lg p-6">
+                                        <div class="flex items-center gap-3 mb-6">
+                                            <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">4</div>
+                                            <h3 class="text-2xl font-bold text-gray-900">Deployment & Integration</h3>
+                                        </div>
+                                        <div class="grid md:grid-cols-3 gap-6">
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <div class="flex items-center gap-2 mb-3">
+                                                    <i data-feather="upload-cloud" class="text-red-500 w-5 h-5"></i>
+                                                    <h4 class="font-semibold">Model Deployment</h4>
+                                                </div>
+                                                <ul class="text-sm text-gray-600 space-y-2">
+                                                    <li>• Set up inference endpoints</li>
+                                                    <li>• Configure auto-scaling</li>
+                                                    <li>• Implement A/B testing</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <div class="flex items-center gap-2 mb-3">
+                                                    <i data-feather="layers" class="text-red-500 w-5 h-5"></i>
+                                                    <h4 class="font-semibold">API Integration</h4>
+                                                </div>
+                                                <ul class="text-sm text-gray-600 space-y-2">
+                                                    <li>• Update API gateway</li>
+                                                    <li>• Implement ML endpoints</li>
+                                                    <li>• Set up authentication</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4 shadow">
+                                                <div class="flex items-center gap-2 mb-3">
+                                                    <i data-feather="monitor" class="text-red-500 w-5 h-5"></i>
+                                                    <h4 class="font-semibold">UI Integration</h4>
+                                                </div>
+                                                <ul class="text-sm text-gray-600 space-y-2">
+                                                    <li>• Update dashboards</li>
+                                                    <li>• Add ML insights views</li>
+                                                    <li>• Implement visualization tools</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Implementation Notes -->
+                            <div class="bg-gray-50 rounded-xl p-6">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">Implementation Considerations</h3>
+                                <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-600">
+                                    <ul class="space-y-2">
+                                        <li>• Maintain system availability during upgrades</li>
+                                        <li>• Implement robust testing at each phase</li>
+                                        <li>• Ensure data security and compliance</li>
+                                    </ul>
+                                    <ul class="space-y-2">
+                                        <li>• Train teams on new technologies</li>
+                                        <li>• Document all changes and processes</li>
+                                        <li>• Plan for rollback scenarios</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="placeholder5" class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8 hidden">
+                    <div class="max-w-7xl mx-auto pt-8">
+                        <div class="bg-white rounded-2xl shadow-xl p-8">
+                            <!-- Header -->
+                            <div class="flex items-center gap-3 mb-8">
+                                <span class="text-emerald-600 text-3xl font-bold w-8 h-8 flex items-center justify-center">₹</span>
+                                <h2 class="text-3xl font-bold text-gray-900">Budget & Timeline Estimation</h2>
+                            </div>
+                
+                            <!-- Overview -->
+                            <div class="bg-gradient-to-r from-emerald-50 to-emerald-100 rounded-xl p-6 mb-12">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <i data-feather="info" class="text-emerald-600 w-6 h-6"></i>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        Estimated total budget for the complete architecture upgrade: 
+                                        <span class="font-bold text-emerald-800">₹57L - ₹65L</span>
+                                    </p>
+                                </div>
+                                <p class="text-sm text-gray-600 ml-10">Implementation timeframe: 12-15 months</p>
+                            </div>
+                
+                            <!-- Phase-wise Budget Breakdown -->
+                            <div class="mb-12">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6">Phase-wise Budget Allocation</h3>
+                                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                    <!-- Infrastructure Phase -->
+                                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                                        <div class="bg-blue-500 p-4">
+                                            <div class="flex items-center justify-between">
+                                                <h4 class="text-white font-bold">Infrastructure</h4>
+                                                <i data-feather="server" class="text-white w-5 h-5"></i>
+                                            </div>
+                                            <p class="text-white text-2xl font-bold mt-2">₹17-19L</p>
+                                            <p class="text-blue-100 text-sm">3-4 months</p>
+                                        </div>
+                                        <div class="p-4">
+                                            <ul class="text-sm text-gray-600 space-y-2">
+                                                <li>• Hardware: ₹8-9L</li>
+                                                <li>• Software Licenses: ₹5-6L</li>
+                                                <li>• Implementation: ₹4L</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                
+                                    <!-- Data Integration Phase -->
+                                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                                        <div class="bg-purple-500 p-4">
+                                            <div class="flex items-center justify-between">
+                                                <h4 class="text-white font-bold">Data Integration</h4>
+                                                <i data-feather="database" class="text-white w-5 h-5"></i>
+                                            </div>
+                                            <p class="text-white text-2xl font-bold mt-2">₹13-15L</p>
+                                            <p class="text-purple-100 text-sm">3-4 months</p>
+                                        </div>
+                                        <div class="p-4">
+                                            <ul class="text-sm text-gray-600 space-y-2">
+                                                <li>• Data Sources: ₹5-6L</li>
+                                                <li>• ETL Development: ₹4-5L</li>
+                                                <li>• Quality Tools: ₹4L</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                
+                                    <!-- ML Infrastructure Phase -->
+                                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                                        <div class="bg-green-500 p-4">
+                                            <div class="flex items-center justify-between">
+                                                <h4 class="text-white font-bold">ML Infrastructure</h4>
+                                                <i data-feather="cpu" class="text-white w-5 h-5"></i>
+                                            </div>
+                                            <p class="text-white text-2xl font-bold mt-2">₹19-23L</p>
+                                            <p class="text-green-100 text-sm"">4-5 months</p>
+                                        </div>
+                                        <div class="p-4">
+                                            <ul class="text-sm text-gray-600 space-y-2">
+                                                <li>• GPU Infrastructure: ₹9-11L</li>
+                                                <li>• ML Tools: ₹6-7L</li>
+                                                <li>• Model Development: ₹4-5L</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                
+                                    <!-- Deployment Phase -->
+                                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                                        <div class="bg-yellow-500 p-4">
+                                            <div class="flex items-center justify-between">
+                                                <h4 class="text-white font-bold">Deployment</h4>
+                                                <i data-feather="upload-cloud" class="text-white w-5 h-5"></i>
+                                            </div>
+                                            <p class="text-white text-2xl font-bold mt-2">₹8-9L</p>
+                                            <p class="text-yellow-100 text-sm">2-3 months</p>
+                                        </div>
+                                        <div class="p-4">
+                                            <ul class="text-sm text-gray-600 space-y-2">
+                                                <li>• Integration: ₹4L</li>
+                                                <li>• Testing: ₹2-3L</li>
+                                                <li>• Documentation: ₹2L</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Additional Costs -->
+                            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                                <!-- Team Costs -->
+                                <div class="bg-white rounded-xl shadow-lg p-6">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="users" class="text-indigo-600 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Team Costs</h3>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="flex justify-between items-center border-b pb-2">
+                                            <span class="text-gray-600">Data Engineers (2)</span>
+                                            <span class="font-semibold">₹5L/year</span>
+                                        </div>
+                                        <div class="flex justify-between items-center border-b pb-2">
+                                            <span class="text-gray-600">ML Engineers (1)</span>
+                                            <span class="font-semibold">₹9L/year</span>
+                                        </div>
+                                        <div class="flex justify-between items-center border-b pb-2">
+                                            <span class="text-gray-600">DevOps (1)</span>
+                                            <span class="font-semibold">₹6L/year</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-600">Project Manager (1)</span>
+                                            <span class="font-semibold">₹12L/year</span>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Operational Costs -->
+                                <div class="bg-white rounded-xl shadow-lg p-6">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="activity" class="text-rose-600 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Annual Operational Costs</h3>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="flex justify-between items-center border-b pb-2">
+                                            <span class="text-gray-600">Cloud Infrastructure</span>
+                                            <span class="font-semibold">₹12-15L/year</span>
+                                        </div>
+                                        <div class="flex justify-between items-center border-b pb-2">
+                                            <span class="text-gray-600">Software Licenses</span>
+                                            <span class="font-semibold">₹5-6L/year</span>
+                                        </div>
+                                        <div class="flex justify-between items-center border-b pb-2">
+                                            <span class="text-gray-600">Maintenance</span>
+                                            <span class="font-semibold">₹3-4L/year</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-600">Support</span>
+                                            <span class="font-semibold">₹2-3L/year</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Timeline -->
+                            <div class="bg-white rounded-xl shadow-lg p-6">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <i data-feather="calendar" class="text-blue-600 w-6 h-6"></i>
+                                    <h3 class="text-xl font-bold text-gray-800">Implementation Timeline</h3>
+                                </div>
+                                <div class="relative">
+                                    <div class="absolute h-full w-0.5 bg-gray-200 left-9"></div>
+                                    <div class="space-y-8 relative">
+                                        <div class="flex items-start gap-6">
+                                            <div class="bg-blue-100 rounded-full w-5 h-5 mt-1 z-10">
+                                                <div class="bg-blue-500 rounded-full w-3 h-3 m-1"></div>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">Months 1-4: Infrastructure Setup</h4>
+                                                <p class="text-sm text-gray-600 mt-1">Hardware procurement, software setup, initial implementation</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start gap-6">
+                                            <div class="bg-purple-100 rounded-full w-5 h-5 mt-1 z-10">
+                                                <div class="bg-purple-500 rounded-full w-3 h-3 m-1"></div>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">Months 4-7: Data Integration</h4>
+                                                <p class="text-sm text-gray-600 mt-1">Data source integration, ETL development, quality implementation</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start gap-6">
+                                            <div class="bg-green-100 rounded-full w-5 h-5 mt-1 z-10">
+                                                <div class="bg-green-500 rounded-full w-3 h-3 m-1"></div>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">Months 7-12: ML Infrastructure</h4>
+                                                <p class="text-sm text-gray-600 mt-1">ML platform setup, model development, testing</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start gap-6">
+                                            <div class="bg-yellow-100 rounded-full w-5 h-5 mt-1 z-10">
+                                                <div class="bg-yellow-500 rounded-full w-3 h-3 m-1"></div>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">Months 12-15: Deployment & Integration</h4>
+                                                <p class="text-sm text-gray-600 mt-1">System integration, testing, documentation, and training</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="hospitals" class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8 hidden">
+                    <div class="max-w-7xl mx-auto pt-8">
+                        <div class="bg-white rounded-2xl shadow-xl p-8">
+                            <!-- Header -->
+                            <div class="flex items-center gap-3 mb-8">
+                                <i data-feather="activity" class="text-rose-600 w-8 h-8"></i>
+                                <h2 class="text-3xl font-bold text-gray-900">Healthcare & Hospitals Implementation</h2>
+                            </div>
+                
+                            <!-- Overview -->
+                            <div class="bg-gradient-to-r from-rose-50 to-rose-100 rounded-xl p-6 mb-12">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <i data-feather="heart" class="text-rose-600 w-6 h-6"></i>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        Customized air quality monitoring and prediction system for healthcare environments,
+                                        focusing on infection control, patient safety, and regulatory compliance.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <!-- Key Areas -->
+                            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                                <!-- Monitoring Zones -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-blue-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="map" class="text-blue-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Critical Zones</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Operation Theaters</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>ICUs & Recovery Rooms</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Isolation Wards</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Laboratory Areas</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                                <!-- Parameters -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-purple-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="thermometer" class="text-purple-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Key Parameters</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Airborne Particle Count</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Microbial Contamination</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Temperature & Humidity</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Pressure Differentials</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                                <!-- Compliance -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-green-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="shield" class="text-green-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Compliance</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>NABH Standards</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>WHO Guidelines</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>ISO 14644 Requirements</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>CDC Recommendations</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                
+                            <!-- AI/ML Features -->
+                            <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6">Healthcare-Specific AI/ML Features</h3>
+                                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    <!-- Predictive Analytics -->
+                                    <div class="bg-blue-50 rounded-lg p-4">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i data-feather="trending-up" class="text-blue-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Predictive Analytics</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-2">
+                                            <li>• Infection Risk Prediction</li>
+                                            <li>• Air Quality Forecasting</li>
+                                            <li>• Maintenance Scheduling</li>
+                                        </ul>
+                                    </div>
+                
+                                    <!-- Real-time Monitoring -->
+                                    <div class="bg-purple-50 rounded-lg p-4">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i data-feather="monitor" class="text-purple-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Real-time Monitoring</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-2">
+                                            <li>• Critical Zone Alerts</li>
+                                            <li>• Threshold Violations</li>
+                                            <li>• Parameter Tracking</li>
+                                        </ul>
+                                    </div>
+                
+                                    <!-- Automated Reporting -->
+                                    <div class="bg-green-50 rounded-lg p-4">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i data-feather="file-text" class="text-green-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Automated Reporting</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-2">
+                                            <li>• Compliance Reports</li>
+                                            <li>• Incident Analysis</li>
+                                            <li>• Audit Trails</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Integration Points -->
+                            <div class="bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-xl p-6">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <i data-feather="git-merge" class="text-indigo-600 w-6 h-6"></i>
+                                    <h3 class="text-xl font-bold text-gray-800">Healthcare System Integration</h3>
+                                </div>
+                                <div class="grid md:grid-cols-4 gap-4">
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="database" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">HIS Integration</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Integration with Hospital Information Systems</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="layers" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">BMS Connection</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Building Management System Integration</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="bell" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">Alert System</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Emergency Response Integration</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="smartphone" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">Mobile Access</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Staff Mobile App Integration</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="hotels" class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+                    <div class="max-w-7xl mx-auto pt-8">
+                        <div class="bg-white rounded-2xl shadow-xl p-8">
+                            <!-- Header -->
+                            <div class="flex items-center gap-3 mb-8">
+                                <i data-feather="home" class="text-blue-600 w-8 h-8"></i>
+                                <h2 class="text-3xl font-bold text-gray-900">Hotel & Hospitality Implementation</h2>
+                            </div>
+                
+                            <!-- Overview -->
+                            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-6 mb-12">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <i data-feather="star" class="text-blue-600 w-6 h-6"></i>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        Comprehensive air quality monitoring and prediction system for hospitality environments,
+                                        focusing on guest comfort, energy efficiency, and environmental sustainability.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <!-- Key Areas -->
+                            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                                <!-- Monitoring Zones -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-blue-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="map" class="text-blue-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Key Zones</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Guest Rooms</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Lobbies & Common Areas</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Restaurants & Bars</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Conference Facilities</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                                <!-- Parameters -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-purple-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="thermometer" class="text-purple-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Key Parameters</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Indoor Air Quality (AQI)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Temperature & Humidity</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>CO2 & VOC Levels</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Particulate Matter</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                                <!-- Data Sources -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-green-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="database" class="text-green-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Data Sources</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>IoT Sensor Network</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>Weather Data</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>Environmental Reports</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>Occupancy Data</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                
+                            <!-- AI/ML Features -->
+                            <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6">Hospitality-Specific AI/ML Features</h3>
+                                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    <!-- Predictive Analytics -->
+                                    <div class="bg-blue-50 rounded-lg p-4">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i data-feather="trending-up" class="text-blue-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Time Series Analysis</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-2">
+                                            <li>• LSTM + Time2Vec Models</li>
+                                            <li>• Anomaly Detection</li>
+                                            <li>• Transformer + TFT</li>
+                                        </ul>
+                                    </div>
+                
+                                    <!-- Computer Vision -->
+                                    <div class="bg-purple-50 rounded-lg p-4">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i data-feather="eye" class="text-purple-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Computer Vision</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-2">
+                                            <li>• AQI Prediction</li>
+                                            <li>• Smog Detection</li>
+                                            <li>• Particle Analysis</li>
+                                        </ul>
+                                    </div>
+                
+                                    <!-- NLP Features -->
+                                    <div class="bg-green-50 rounded-lg p-4">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i data-feather="message-square" class="text-green-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Natural Language</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-2">
+                                            <li>• Environmental Sentiment</li>
+                                            <li>• Report Analysis</li>
+                                            <li>• Alert Generation</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Integration Points -->
+                            <div class="bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-xl p-6">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <i data-feather="git-merge" class="text-indigo-600 w-6 h-6"></i>
+                                    <h3 class="text-xl font-bold text-gray-800">System Integration</h3>
+                                </div>
+                                <div class="grid md:grid-cols-4 gap-4">
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="server" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">PMS Integration</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Property Management System Connection</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="cpu" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">BMS Connection</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Building Management System Integration</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="smartphone" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">Mobile Apps</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Guest & Staff Mobile Applications</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="bell" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">Alert System</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Emergency Response Integration</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="itparks" class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+                    <div class="max-w-7xl mx-auto pt-8">
+                        <div class="bg-white rounded-2xl shadow-xl p-8">
+                            <!-- Header -->
+                            <div class="flex items-center gap-3 mb-8">
+                                <i data-feather="cpu" class="text-emerald-600 w-8 h-8"></i>
+                                <h2 class="text-3xl font-bold text-gray-900">IT Parks & Tech Spaces Implementation</h2>
+                            </div>
+                
+                            <!-- Overview -->
+                            <div class="bg-gradient-to-r from-emerald-50 to-emerald-100 rounded-xl p-6 mb-12">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <i data-feather="monitor" class="text-emerald-600 w-6 h-6"></i>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        Advanced air quality monitoring and prediction system for modern tech workspaces,
+                                        focusing on employee comfort, productivity optimization, and environmental sustainability.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <!-- Key Areas -->
+                            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                                <!-- Monitoring Zones -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-blue-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="map" class="text-blue-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Key Zones</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Office Spaces</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Data Centers</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Meeting Rooms</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Common Areas</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                                <!-- Parameters -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-purple-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="thermometer" class="text-purple-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Key Parameters</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Air Quality Index (AQI)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>CO2 Levels</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Temperature Control</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Ventilation Efficiency</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                                <!-- Data Sources -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-green-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="database" class="text-green-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Data Sources</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>IoT Sensor Network</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>Weather Services</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>Satellite Data</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>Environmental Reports</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                
+                            <!-- AI/ML Features -->
+                            <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6">Tech Space AI/ML Features</h3>
+                                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    <!-- Time Series Analysis -->
+                                    <div class="bg-blue-50 rounded-lg p-4">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i data-feather="trending-up" class="text-blue-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Time Series Analysis</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-2">
+                                            <li>• LSTM + Time2Vec Models</li>
+                                            <li>• Anomaly Detection</li>
+                                            <li>• Transformer + TFT</li>
+                                        </ul>
+                                    </div>
+                
+                                    <!-- Computer Vision -->
+                                    <div class="bg-purple-50 rounded-lg p-4">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i data-feather="eye" class="text-purple-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Computer Vision</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-2">
+                                            <li>• AQI Prediction</li>
+                                            <li>• Smog Detection</li>
+                                            <li>• Particle Analysis</li>
+                                        </ul>
+                                    </div>
+                
+                                    <!-- Natural Language -->
+                                    <div class="bg-green-50 rounded-lg p-4">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i data-feather="message-square" class="text-green-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Natural Language</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-2">
+                                            <li>• Environmental Sentiment</li>
+                                            <li>• Report Analysis</li>
+                                            <li>• Alert Generation</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Integration Points -->
+                            <div class="bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-xl p-6">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <i data-feather="git-merge" class="text-indigo-600 w-6 h-6"></i>
+                                    <h3 class="text-xl font-bold text-gray-800">System Integration</h3>
+                                </div>
+                                <div class="grid md:grid-cols-4 gap-4">
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="server" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">DCIM Systems</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Data Center Infrastructure Management</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="layers" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">BMS Integration</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Building Management System</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="smartphone" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">Mobile Apps</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Employee Mobile Applications</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="bell" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">Alert System</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Emergency Response Integration</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="public" class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+                    <div class="max-w-7xl mx-auto pt-8">
+                        <div class="bg-white rounded-2xl shadow-xl p-8">
+                            <!-- Header -->
+                            <div class="flex items-center gap-3 mb-8">
+                                <i data-feather="users" class="text-amber-600 w-8 h-8"></i>
+                                <h2 class="text-3xl font-bold text-gray-900">Public Spaces Implementation</h2>
+                            </div>
+                
+                            <!-- Overview -->
+                            <div class="bg-gradient-to-r from-amber-50 to-amber-100 rounded-xl p-6 mb-12">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <i data-feather="shield" class="text-amber-600 w-6 h-6"></i>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        Comprehensive air quality monitoring and prediction system for high-traffic public spaces,
+                                        focusing on public health, crowd comfort, and environmental safety in mass gathering areas.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <!-- Key Areas -->
+                            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                                <!-- Monitoring Zones -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-blue-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="map" class="text-blue-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Critical Zones</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Terminal Buildings & Stations</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Shopping Mall Atriums</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Convention Centers</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Food Courts & Gathering Areas</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                                <!-- Parameters -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-purple-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="thermometer" class="text-purple-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Key Parameters</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Crowd Density Analysis</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Air Quality Index (AQI)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Ventilation Efficiency</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Thermal Comfort Metrics</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                                <!-- Data Sources -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-green-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="database" class="text-green-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Data Sources</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>Environmental Sensors</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>Surveillance Cameras</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>Weather Data</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>Occupancy Counters</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                
+                            <!-- AI/ML Features -->
+                            <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6">Public Space AI/ML Features</h3>
+                                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    <!-- Time Series Analysis -->
+                                    <div class="bg-blue-50 rounded-lg p-4">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i data-feather="trending-up" class="text-blue-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Time Series Analysis</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-2">
+                                            <li>• LSTM + Time2Vec Models</li>
+                                            <li>• Anomaly Detection</li>
+                                            <li>• Transformer + TFT</li>
+                                        </ul>
+                                    </div>
+                
+                                    <!-- Computer Vision -->
+                                    <div class="bg-purple-50 rounded-lg p-4">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i data-feather="eye" class="text-purple-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Computer Vision</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-2">
+                                            <li>• AQI Prediction</li>
+                                            <li>• Smog Detection</li>
+                                            <li>• Crowd Density Analysis</li>
+                                        </ul>
+                                    </div>
+                
+                                    <!-- Natural Language -->
+                                    <div class="bg-green-50 rounded-lg p-4">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <i data-feather="message-square" class="text-green-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Natural Language</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-2">
+                                            <li>• Public Announcement Generation</li>
+                                            <li>• Incident Report Analysis</li>
+                                            <li>• Emergency Alerts</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Integration Points -->
+                            <div class="bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-xl p-6">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <i data-feather="git-merge" class="text-indigo-600 w-6 h-6"></i>
+                                    <h3 class="text-xl font-bold text-gray-800">System Integration</h3>
+                                </div>
+                                <div class="grid md:grid-cols-4 gap-4">
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="monitor" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">Control Center</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Central Monitoring System</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="radio" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">PA System</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Public Announcement Integration</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="bell" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">Emergency System</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Emergency Response Protocol</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="smartphone" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">Mobile Apps</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Public Information Apps</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="lstm" class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+                    <div class="max-w-7xl mx-auto pt-8">
+                        <div class="bg-white rounded-2xl shadow-xl p-8">
+                            <!-- Header -->
+                            <div class="flex items-center gap-3 mb-8">
+                                <i data-feather="cpu" class="text-purple-600 w-8 h-8"></i>
+                                <h2 class="text-3xl font-bold text-gray-900">LSTM Implementation for Air Quality Monitoring</h2>
+                            </div>
+                
+                            <!-- Overview -->
+                            <div class="bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl p-6 mb-12">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <i data-feather="trending-up" class="text-purple-600 w-6 h-6"></i>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        Long Short-Term Memory (LSTM) networks excel at learning patterns in time-series data,
+                                        making them ideal for predicting air quality trends and detecting anomalies in environmental parameters.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <!-- LSTM Architecture -->
+                            <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                                    <i data-feather="layers" class="text-purple-600 w-6 h-6"></i>
+                                    LSTM Architecture for AQM
+                                </h3>
+                                <div class="grid md:grid-cols-4 gap-6">
+                                    <!-- Input Layer -->
+                                    <div class="bg-blue-50 rounded-lg p-6">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="database" class="text-blue-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Input Layer</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-3">
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                                <span>PM2.5 Levels</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                                <span>Temperature</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                                <span>Humidity</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                                <span>Wind Data</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                
+                                    <!-- LSTM Cells -->
+                                    <div class="bg-purple-50 rounded-lg p-6">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="cpu" class="text-purple-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">LSTM Cells</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-3">
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                                <span>Forget Gate</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                                <span>Input Gate</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                                <span>Cell State</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                                <span>Output Gate</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                
+                                    <!-- Hidden Layers -->
+                                    <div class="bg-indigo-50 rounded-lg p-6">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="layers" class="text-indigo-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Hidden Layers</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-3">
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-indigo-500 w-4 h-4 mt-1"></i>
+                                                <span>Pattern Recognition</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-indigo-500 w-4 h-4 mt-1"></i>
+                                                <span>Temporal Features</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-indigo-500 w-4 h-4 mt-1"></i>
+                                                <span>Sequence Learning</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-indigo-500 w-4 h-4 mt-1"></i>
+                                                <span>Memory Units</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                
+                                    <!-- Output Layer -->
+                                    <div class="bg-green-50 rounded-lg p-6">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <i data-feather="bar-chart-2" class="text-green-600 w-5 h-5"></i>
+                                            <h4 class="font-semibold">Output Layer</h4>
+                                        </div>
+                                        <ul class="text-sm text-gray-600 space-y-3">
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                                <span>AQI Prediction</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                                <span>Anomaly Scores</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                                <span>Trend Analysis</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-feather="circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                                <span>Alert Triggers</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Key Features -->
+                            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                                <!-- Time Series Processing -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-blue-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="clock" class="text-blue-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Time Series Processing</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Sequential Data Learning</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Long-term Dependencies</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-blue-500 w-4 h-4 mt-1"></i>
+                                            <span>Pattern Recognition</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                                <!-- Advanced Features -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-purple-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="zap" class="text-purple-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Advanced Features</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Multi-variate Analysis</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Anomaly Detection</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-purple-500 w-4 h-4 mt-1"></i>
+                                            <span>Predictive Modeling</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                                <!-- Applications -->
+                                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-green-500">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <i data-feather="target" class="text-green-500 w-6 h-6"></i>
+                                        <h3 class="text-xl font-bold text-gray-800">Applications</h3>
+                                    </div>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>Early Warning Systems</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>Trend Forecasting</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-feather="check-circle" class="text-green-500 w-4 h-4 mt-1"></i>
+                                            <span>Risk Assessment</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                
+                            <!-- Benefits -->
+                            <div class="bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-xl p-6">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <i data-feather="award" class="text-indigo-600 w-6 h-6"></i>
+                                    <h3 class="text-xl font-bold text-gray-800">Benefits for AQM</h3>
+                                </div>
+                                <div class="grid md:grid-cols-4 gap-4">
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="trending-up" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">Accuracy</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">High prediction accuracy for AQI trends</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="alert-triangle" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">Early Warning</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Proactive alert generation</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="activity" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">Real-time</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Continuous monitoring & adaptation</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-md">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <i data-feather="maximize-2" class="text-indigo-500 w-4 h-4"></i>
+                                            <span class="font-semibold">Scalable</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Handles multiple sensor inputs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Simple navigation handling
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Remove all active states
+                document.querySelectorAll('nav a').forEach(el => {
+                    el.classList.remove('bg-gray-700', 'text-white');
+                    el.classList.add('text-gray-300');
+                });
+                
+                // Add active state to clicked link
+                e.target.closest('a').classList.add('bg-gray-700', 'text-white');
+                e.target.closest('a').classList.remove('text-gray-300');
+
+                // Hide all sections
+                document.querySelectorAll('main > section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+
+                // Show selected section
+                const targetId = e.target.closest('a').getAttribute('href').slice(1);
+                document.getElementById(targetId).classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
