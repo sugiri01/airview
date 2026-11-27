@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sudhir Giri · OMPOI</title>
+<meta name="description" content="Sudhir Giri, Co-Founder & CTO, OMPOI Technologies. Technology Entrepreneur | AI & Data Science | Mensa Qualified.">
+<meta name="theme-color" content="#e6f0fb">
+<meta property="og:title" content="Sudhir Giri · Co-Founder & CTO, OMPOI">
+<meta property="og:description" content="Technology Entrepreneur | AI & Data Science | Mensa Qualified">
+<meta property="og:image" content="https://ompoi.com/card/sudhir/sudhir.jpg">
+<meta property="og:type" content="profile">
+<link rel="icon" href="ompoi-mark.png">
+<link rel="apple-touch-icon" href="ompoi-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#eef3f8; --card:#ffffff; --ink:#151c2b; --muted:#5b6475; --line:#e2e7ee;
+    --brand:#13467f; --green:#3f9a36; --chip:#f2f5f9; --hero-a:#0f2f57; --hero-b:#13467f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.35;overflow:hidden}
+  a{color:inherit;text-decoration:none}
+  svg{display:block}
+
+  /* One screen: the card is exactly the viewport height on phones */
+  .card{height:100vh;height:100dvh;max-width:440px;margin:0 auto;background:var(--card);display:flex;flex-direction:column;overflow:hidden;position:relative}
+  @media (min-width:600px) and (min-height:760px){
+    body{display:grid;place-items:center}
+    .card{height:min(860px,94dvh);border-radius:28px;box-shadow:0 30px 70px -30px rgba(19,70,127,.35);width:420px}
+  }
+
+  /* Hero */
+  .hero{position:relative;flex:none;background:linear-gradient(150deg,#e6f0fb 0%,#f3f8f1 60%,#e4f2e1 100%);color:#13467f;border-bottom:1px solid #e2e7ee;
+    padding:calc(env(safe-area-inset-top) + 2.2dvh) 18px calc(6dvh + 34px);overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.07;background-image:repeating-linear-gradient(115deg,#13467f 0 1px,transparent 1px 22px)}
+  .hero::after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;right:-70px;top:-90px;background:rgba(74,166,63,.22);filter:blur(10px)}
+  .bar{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between}
+  .logo{display:inline-flex;background:#fff;border-radius:12px;padding:6px 12px;box-shadow:0 4px 14px -8px rgba(19,70,127,.35)}
+  .logo img{height:26px;width:auto}
+  .hbtns{display:flex;gap:8px}
+  .iconbtn{width:36px;height:36px;border-radius:50%;border:1px solid #d5deea;background:#fff;color:#13467f;display:grid;place-items:center;cursor:pointer}
+  .tagline{position:relative;z-index:1;margin-top:1.6dvh;font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(13px,2dvh,16px);line-height:1.3;color:#13467f}
+
+  /* Body fills the rest and spreads evenly */
+  .body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-between;padding:0 18px calc(env(safe-area-inset-bottom) + 1.6dvh);margin-top:calc(-6dvh - 26px);position:relative;z-index:2}
+  .profile{text-align:center}
+  .avatar{width:clamp(84px,15dvh,124px);height:clamp(84px,15dvh,124px);border-radius:50%;object-fit:cover;object-position:center 30%;border:4px solid var(--card);box-shadow:0 10px 26px -10px rgba(19,70,127,.45);background:#ccd}
+  h1{font-family:Fraunces,Georgia,serif;font-size:clamp(22px,3.7dvh,30px);font-weight:700;margin-top:.8dvh;letter-spacing:-.01em;line-height:1.1}
+  .role{color:var(--green);font-weight:600;font-size:clamp(13px,2dvh,15px);margin-top:.3dvh}
+  .company{color:var(--muted);font-size:clamp(12px,1.8dvh,14px)}
+  .spec{display:inline-flex;gap:4px;align-items:center;font-family:inherit;color:var(--brand);cursor:pointer;margin-top:1dvh;font-size:clamp(11px,1.65dvh,12.5px);font-weight:500;padding:4px 10px;border-radius:99px;background:var(--chip);border:1px solid var(--line)}
+
+  .quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .q{display:flex;flex-direction:column;align-items:center;gap:.6dvh;font-size:clamp(11px,1.65dvh,12.5px);font-weight:500;color:var(--muted)}
+  .q .ic{width:clamp(44px,7dvh,56px);height:clamp(44px,7dvh,56px);border-radius:16px;display:grid;place-items:center;background:var(--chip);color:var(--brand);border:1px solid var(--line)}
+  .q.wa .ic{color:#1fa855}
+  .q:active .ic{transform:scale(.95)}
+
+  .save{display:flex;align-items:center;justify-content:center;gap:10px;height:clamp(44px,6.6dvh,54px);border-radius:14px;background:var(--brand);color:var(--card);font-weight:600;font-size:clamp(14px,2.1dvh,16px);box-shadow:0 10px 24px -12px var(--brand)}
+
+  .info{display:flex;flex-direction:column;gap:.9dvh}
+  .line{display:flex;align-items:center;gap:10px;font-size:clamp(12px,1.8dvh,13.5px);color:var(--ink)}
+  .line .i{flex:none;width:30px;height:30px;border-radius:9px;background:var(--chip);color:var(--brand);display:grid;place-items:center}
+  .line span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .social{display:flex;gap:8px}
+  .s{width:clamp(36px,5.4dvh,42px);height:clamp(36px,5.4dvh,42px);border-radius:12px;border:1px solid var(--line);display:grid;place-items:center}
+  .s svg{width:19px;height:19px}
+  .s.li{color:#0a66c2}.s.ig{color:#d6249f}.s.fb{color:#1877f2}
+  .qrbtn{display:flex;align-items:center;gap:6px;font:inherit;font-size:12.5px;font-weight:600;padding:0 12px;height:clamp(36px,5.4dvh,42px);border-radius:12px;border:1px solid var(--line);background:var(--chip);color:var(--ink);cursor:pointer}
+  .cin{text-align:center;font-size:10px;color:var(--muted);letter-spacing:.02em}
+
+  /* Very short screens: drop the least important bits */
+  @media (max-height:600px){ .tagline{display:none} .hero{padding-bottom:calc(4dvh + 34px)} }
+
+  /* QR overlay */
+  .ov{position:fixed;inset:0;background:rgba(5,10,20,.72);display:none;place-items:center;z-index:20;padding:20px}
+  .ov.on{display:grid}
+  .sheet{background:#fff;color:#151c2b;border-radius:24px;padding:22px;text-align:center;max-width:340px;width:100%;max-height:90dvh;overflow:auto}
+  .sheet img.q2{width:100%;height:auto;display:block;border-radius:12px}
+  .sheet p{font-size:13px;color:#5b6475;margin-top:10px}
+  .sheet .row{display:flex;gap:8px;justify-content:center;margin-top:14px}
+  .btn{font:inherit;font-size:13px;font-weight:600;padding:9px 12px;white-space:nowrap;border-radius:10px;border:1px solid #e2e7ee;background:#f2f5f9;color:#151c2b;cursor:pointer}
+.prof h3{font-size:15px;margin-bottom:2px;color:#13467f}
+  .prof .hl{font-size:12.5px;color:#3f9a36;font-weight:600;margin-bottom:10px}
+  .prof dl{text-align:left;font-size:13px;line-height:1.45}
+  .prof dt{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#5b6475;font-weight:600;margin-top:10px}
+  .prof dd{margin:2px 0 0}
+  .prof a{color:#13467f;text-decoration:underline}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#151c2b;color:#fff;padding:10px 16px;border-radius:12px;font-size:13.5px;opacity:0;transition:.25s;pointer-events:none;z-index:30}
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<main class="card" itemscope itemtype="https://schema.org/Person">
+  <header class="hero">
+    <div class="bar">
+      <div class="logo"><img src="ompoi-logo.png" alt="OMPOI" width="91" height="26"></div>
+      <button class="iconbtn" id="shareBtn" aria-label="Share this card">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+      </button>
+    </div>
+    <p class="tagline">Digitizing Commodity Trade.<br>Eliminating Inefficiency.</p>
+  </header>
+
+  <div class="body">
+    <div class="profile">
+      <img class="avatar" src="sudhir.jpg" alt="Portrait of Sudhir Giri" itemprop="image" width="124" height="124">
+      <h1 itemprop="name">Sudhir Giri</h1>
+      <div class="role" itemprop="jobTitle">Co-Founder &amp; CTO</div>
+      <div class="company" itemprop="worksFor">OMPOI Technologies Pvt. Ltd.</div>
+      <button class="spec" id="profBtn" type="button">AI &amp; Data Science · Mensa Qualified <span aria-hidden="true">›</span></button>
+    </div>
+
+    <nav class="quick" aria-label="Quick contact">
+      <a class="q" href="tel:+919840447570"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>Call</a>
+      <a class="q wa" href="https://wa.me/919840447570?text=Hello%20Sudhir%2C%20I%20got%20your%20OMPOI%20digital%20card." target="_blank" rel="noopener"><span class="ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.200c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.700.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4ZM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 12 2.2a9.8 9.8 0 0 1 0 19.6Zm8.4-18.2A11.8 11.8 0 0 0 1.7 17.8L0 24l6.3-1.7A11.8 11.8 0 0 0 24 12c0-3.2-1.2-6.2-3.6-8.4Z"/></svg></span>WhatsApp</a>
+      <a class="q" href="mailto:sudhir@ompoi.com"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>Email</a>
+      <a class="q" href="https://www.ompoi.com" target="_blank" rel="noopener"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg></span>Website</a>
+    </nav>
+
+    <a class="save" href="sudhir-giri.vcf" download="Sudhir-Giri-OMPOI.vcf">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+      Save Contact
+    </a>
+
+    <div class="info">
+      <a class="line" href="tel:+919840447570"><span class="i"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></span><span itemprop="telephone">+91 98404 47570</span></a>
+      <a class="line" href="mailto:sudhir@ompoi.com"><span class="i"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><span itemprop="email">sudhir@ompoi.com · info@ompoi.com</span></a>
+      <a class="line" href="https://www.google.com/maps/search/?api=1&query=131+G.N.+Street+Seven+Wells+Parrys+Chennai+600001" target="_blank" rel="noopener"><span class="i"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span itemprop="address">131, G.N. Street, Parrys, Chennai 600001</span></a>
+    </div>
+
+    <div>
+      <div class="foot">
+        <div class="social">
+          <a class="s li" href="https://www.linkedin.com/in/sudhirgiripp/" target="_blank" rel="noopener" aria-label="Sudhir Giri on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1Zm1.8 13.1H3.6V9h3.5v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></svg></a>
+          <a class="s ig" href="https://www.instagram.com/ompoi_ai/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4ZM17.5 6.5h.01"/></svg></a>
+          <a class="s fb" href="https://www.facebook.com/share/14ouZJyExt2/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.9 11.900v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12Z"/></svg></a>
+        </div>
+        <button class="qrbtn" id="qrBtn" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg>Show QR</button>
+      </div>
+      <p class="cin" style="margin-top:1.2dvh">OMPOI Technologies Pvt. Ltd. · CIN U62099TN2025PTC187152</p>
+    </div>
+  </div>
+</main>
+
+<div class="ov" id="ov" role="dialog" aria-label="QR code for this card">
+  <div class="sheet">
+    <img class="q2" src="qr.png" alt="QR code for ompoi.com/card/sudhir" width="480" height="480">
+    <p>Scan to open Sudhir Giri's card · ompoi.com/card/sudhir</p>
+    <div class="row">
+      <button class="btn" id="copyBtn" type="button">Copy link</button>
+      <a class="btn" id="waShare" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="btn" id="closeQr" type="button">Close</button>
+    </div>
+  </div>
+</div>
+<div class="ov" id="pov" role="dialog" aria-label="Sudhir Giri profile">
+  <div class="sheet prof">
+    <h3>Sudhir Giri</h3>
+    <div class="hl">Technology Entrepreneur · AI &amp; Data Science · Mensa Qualified</div>
+    <dl>
+      <dt>Role</dt><dd>Co-Founder &amp; Chief Technology Officer, OMPOI Technologies Pvt. Ltd.</dd>
+      <dt>Expertise</dt><dd>Artificial Intelligence, Machine Learning, Data Science, Technology Strategy, Product Development, Entrepreneurship</dd>
+      <dt>Education</dt><dd>Master&rsquo;s in Data Science &ndash; Deakin University<br>PGP in AI &amp; ML &ndash; University of Texas at Austin<br>B.E. &ndash; Anna University</dd>
+      <dt>OMPOI</dt><dd>AI-powered agricultural commodity marketplace connecting buyers, sellers, traders, processors, importers and exporters. <a href="https://www.linkedin.com/company/ompoi/" target="_blank" rel="noopener">Company LinkedIn</a></dd>
+    </dl>
+    <div class="row"><button class="btn" id="closeProf" type="button">Close</button></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  (function(){
+    var url = 'https://ompoi.com/card/sudhir/';
+    var toast = document.getElementById('toast'), t, ov = document.getElementById('ov');
+    function say(m){ toast.textContent = m; toast.classList.add('on'); clearTimeout(t); t = setTimeout(function(){ toast.classList.remove('on'); }, 2000); }
+    document.getElementById('waShare').href = 'https://wa.me/?text=' + encodeURIComponent('Sudhir Giri – Co-Founder & CTO, OMPOI (AI-powered agri commodity marketplace): ' + url);
+    function copy(){
+      if (navigator.clipboard) navigator.clipboard.writeText(url).then(function(){ say('Link copied'); }, function(){ say(url); });
+      else say(url);
+    }
+    document.getElementById('copyBtn').addEventListener('click', copy);
+    document.getElementById('qrBtn').addEventListener('click', function(){ ov.classList.add('on'); });
+    document.getElementById('closeQr').addEventListener('click', function(){ ov.classList.remove('on'); });
+    ov.addEventListener('click', function(e){ if (e.target === ov) ov.classList.remove('on'); });
+    var pov = document.getElementById('pov');
+    document.getElementById('profBtn').addEventListener('click', function(){ pov.classList.add('on'); });
+    document.getElementById('closeProf').addEventListener('click', function(){ pov.classList.remove('on'); });
+    pov.addEventListener('click', function(e){ if (e.target === pov) pov.classList.remove('on'); });
+    document.getElementById('shareBtn').addEventListener('click', function(){
+      if (navigator.share) navigator.share({ title: 'Sudhir Giri · OMPOI', text: 'Co-Founder & CTO, OMPOI', url: url }).catch(function(){});
+      else copy();
+    });
+  })();
+</script>
+</body>
+</html>
