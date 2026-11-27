@@ -16,5 +16,5 @@ PRODUCTION server running many sites, programs and ports.
 
 ## Digital cards
 - card/        -> https://ompoi.com/card/         (Kadar Oli, Founder & CEO, auto light/dark). Live; do not change unless asked.
-- card/sudhir/ -> https://ompoi.com/card/sudhir/  (Sudhir Giri, Co-Founder & CTO, light only). Upload: scripts/upload-sudhir-card.ps1
+- card/sudhir/ -> https://ompoi.com/card/sudhir/  (Sudhir Giri, Co-Founder & CTO, light only). Live since 27 Nov 2026 (uploaded with scripts/upload-sudhir-card.ps1)
 - Static assets are cached for 1 year by Caddy: a changed image needs a new file name.
