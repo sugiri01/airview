@@ -25,7 +25,8 @@ $Root   = Join-Path $PSScriptRoot '..\card'
 function Stop-Here($msg) { Write-Host "`nSTOPPED: $msg" -ForegroundColor Red; exit 1 }
 
 Write-Host "`n== 1/5  Checking the files on this PC ==" -ForegroundColor Cyan
-$Files = $Files | ForEach-Object { $_.Trim().Replace('\','/') } | Where-Object { $_ }
+# 'powershell -File' passes "a,b" as ONE string, so split on commas/spaces here
+$Files = $Files | ForEach-Object { $_ -split '[,\s]+' } | ForEach-Object { $_.Trim().Replace('\','/') } | Where-Object { $_ }
 foreach ($f in $Files) {
     if ($f -notmatch '^[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)?$' -or $f -match '\.\.') { Stop-Here "'$f' is not a plain card file path. Nothing was changed." }
     if (-not (Test-Path (Join-Path $Root $f))) { Stop-Here "missing card\$f on this PC - run 'git pull' first. Nothing was changed." }
