@@ -6,10 +6,9 @@
 # folder, site, service or port. This workflow never deletes files.
 name: Deploy card to ompoi.com/card
 
+# Automatic upload is switched OFF: uploads are done by hand from the PC.
+# Only runs if started manually from the Actions tab.
 on:
-  push:
-    branches: [main, ccr-f7fe9c85-ynae3g]
-    paths: ['card/**']
   workflow_dispatch:
 
 permissions:
