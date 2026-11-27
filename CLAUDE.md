@@ -18,3 +18,14 @@ PRODUCTION server running many sites, programs and ports.
 - card/        -> https://ompoi.com/card/         (Kadar Oli, Founder & CEO, auto light/dark). Live; do not change unless asked.
 - card/sudhir/ -> https://ompoi.com/card/sudhir/  (Sudhir Giri, Co-Founder & CTO, light only). Live since 27 Nov 2026 (uploaded with scripts/upload-sudhir-card.ps1)
 - Static assets are cached for 1 year by Caddy: a changed image needs a new file name.
+
+## Google Drive status — ALWAYS keep updated
+The user checks ONLY Google Drive for status, not Claude Code.
+- Folder: "OMPOI - Work & Status (Cards, Server, Price system)"
+  https://drive.google.com/drive/folders/1lNaEYXcHoVrw9inSo55F5OG2jUHCzIMC
+- Status page (update after EVERY change, decision or new finding, including
+  the "Last updated" line, status board, decisions waiting and next commands):
+  "00 - START HERE - OMPOI Current Status"
+  https://docs.google.com/document/d/1aMzGvhhUhniHhNzjYxMF_D8TO9awkC7ZOcsuKS9kqsM/edit
+- Detail docs in the same folder: Cards Work Summary (1gCJuAKePE6oOH0S43mopoBJnDd4bKWuRWMLszp4dSFI),
+  Server Health Check (1Y2WkrSA7q1voEMosbIZJHFBovv-8F8_aikc_YtCYVYw).
