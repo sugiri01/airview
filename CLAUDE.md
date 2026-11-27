@@ -15,8 +15,8 @@ PRODUCTION server running many sites, programs and ports.
   and that existing pages (e.g. https://ompoi.com/) are unchanged.
 
 ## Digital cards
-- card/        -> https://ompoi.com/card/         (Kadar Oli, Founder & CEO, auto light/dark). Live; do not change unless asked.
-- card/sudhir/ -> https://ompoi.com/card/sudhir/  (Sudhir Giri, Co-Founder & CTO, light only). Live since 27 Nov 2026 (uploaded with scripts/upload-sudhir-card.ps1)
+- card/        -> https://ompoi.com/card/         (J Kadar Oli, Founder & CEO, light only, ompoi.com landscape behind photo). Live; do not change unless asked.
+- card/sudhir/ -> https://ompoi.com/card/sudhir/  (Sudhir Giri, Co-Founder & CTO, light only, same landscape). Live since 27 Nov 2026. Phone +91 98403 47570. Do not mention Mensa.
 - Static assets are cached for 1 year by Caddy: a changed image needs a new file name.
 
 ## Google Drive status — ALWAYS keep updated

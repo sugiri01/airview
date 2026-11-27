@@ -35,16 +35,15 @@
   }
 
   /* Hero */
-  .hero{position:relative;flex:none;background:linear-gradient(150deg,#e6f0fb 0%,#f3f8f1 60%,#e4f2e1 100%);color:#13467f;border-bottom:1px solid #e2e7ee;
+  .hero{position:relative;flex:none;color:#13467f;border-bottom:1px solid #e2e7ee;background:linear-gradient(180deg,rgba(255,255,255,.30) 0%,rgba(255,255,255,.50) 55%,rgba(255,255,255,.92) 100%),url(ompoi-hero.jpg) center 62%/cover no-repeat,#e6f0fb;
     padding:calc(env(safe-area-inset-top) + 2.2dvh) 18px calc(6dvh + 34px);overflow:hidden}
-  .hero::before{content:"";position:absolute;inset:0;opacity:.07;background-image:repeating-linear-gradient(115deg,#13467f 0 1px,transparent 1px 22px)}
-  .hero::after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;right:-70px;top:-90px;background:rgba(74,166,63,.22);filter:blur(10px)}
+  .hero::before,.hero::after{display:none}
   .bar{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between}
   .logo{display:inline-flex;background:#fff;border-radius:12px;padding:6px 12px;box-shadow:0 4px 14px -8px rgba(19,70,127,.35)}
   .logo img{height:26px;width:auto}
   .hbtns{display:flex;gap:8px}
   .iconbtn{width:36px;height:36px;border-radius:50%;border:1px solid #d5deea;background:#fff;color:#13467f;display:grid;place-items:center;cursor:pointer}
-  .tagline{position:relative;z-index:1;margin-top:1.6dvh;font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(13px,2dvh,16px);line-height:1.3;color:#13467f}
+  .tagline{position:relative;z-index:1;margin-top:1.6dvh;font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(13px,2dvh,16px);line-height:1.3;color:#0f2f57;text-shadow:0 1px 2px rgba(255,255,255,.9),0 0 12px rgba(255,255,255,.8)}
 
   /* Body fills the rest and spreads evenly */
   .body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-between;padding:0 18px calc(env(safe-area-inset-bottom) + 1.6dvh);margin-top:calc(-6dvh - 26px);position:relative;z-index:2}
