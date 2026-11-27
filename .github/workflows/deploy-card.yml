@@ -1,0 +1,69 @@
+# Uploads the card/ folder to https://ompoi.com/card/ whenever it changes.
+#
+# Safety: the SSH key in CARD_DEPLOY_KEY is locked on the server (by
+# scripts/setup-card-deploy.ps1) to rsync into /var/www/ompoi-website-v07/card
+# and nothing else: it cannot open a shell, run commands, or touch any other
+# folder, site, service or port. This workflow never deletes files.
+name: Deploy card to ompoi.com/card
+
+on:
+  push:
+    branches: [main, ccr-f7fe9c85-ynae3g]
+    paths: ['card/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-card
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check secrets are set
+        env:
+          KEY: ${{ secrets.CARD_DEPLOY_KEY }}
+          KNOWN: ${{ secrets.CARD_DEPLOY_KNOWN_HOSTS }}
+        run: |
+          if [ -z "$KEY" ] || [ -z "$KNOWN" ]; then
+            echo "::error::CARD_DEPLOY_KEY / CARD_DEPLOY_KNOWN_HOSTS secrets are missing. Run scripts/setup-card-deploy.ps1 once on the PC."
+            exit 1
+          fi
+
+      - name: Set up SSH key
+        env:
+          KEY: ${{ secrets.CARD_DEPLOY_KEY }}
+          KNOWN: ${{ secrets.CARD_DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$KEY" | tr -d '\r' > ~/.ssh/card_deploy
+          chmod 600 ~/.ssh/card_deploy
+          printf '%s\n' "$KNOWN" | tr -d '\r' > ~/.ssh/known_hosts
+
+      - name: Upload card files (only into /card, never deletes)
+        run: |
+          rsync -rtpv --chmod=D755,F644 \
+            -e "ssh -i $HOME/.ssh/card_deploy -o BatchMode=yes -o StrictHostKeyChecking=yes" \
+            card/ root@69.62.73.115:./
+
+      - name: Check the card is live
+        run: |
+          sleep 3
+          for f in "" kadar-oli.vcf kadar.jpg; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://ompoi.com/card/$f")
+            echo "$code https://ompoi.com/card/$f"
+            [ "$code" = 200 ] || exit 1
+          done
+          code=$(curl -s -o /dev/null -w '%{http_code}' https://ompoi.com/)
+          echo "$code https://ompoi.com/ (main site)"
+          [ "$code" = 200 ] || exit 1
+
+      - name: Remove key from runner
+        if: always()
+        run: rm -f ~/.ssh/card_deploy
